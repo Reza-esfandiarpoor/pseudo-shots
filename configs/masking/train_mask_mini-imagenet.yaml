@@ -1,0 +1,30 @@
+train_dataset: mini-imagenet
+train_dataset_args: {split: train, augment: true, top_k: 3}
+tval_dataset: mini-imagenet
+tval_dataset_args: {split: test, augment: false, top_k: 3}
+val_dataset: mini-imagenet
+val_dataset_args: {split: val, augment: false, top_k: 3}
+
+model: masking-model
+model_args:
+    encoder: resnet12
+    encoder_args: {avg_pool: false, drop_rate: 0.1, dropblock_size: 5}
+    masking: multi-block-masking
+    masking_args: {channels: [640, 320, 1], final_relu: False, max_pool: False, activation: sigmoid, drop_rate: 0.1, dropblock_size: 5}
+    universal: multi-block
+    universal_args: {channels: [640], final_relu: true, max_pool: False, drop_rate: 0.1, dropblock_size: 5}
+
+load_encoder: ./save/classifier_mini-imagenet_resnet12/epoch-100.pth
+freeze_encoder: True
+
+n_way: 5
+n_query: 15
+n_pseudo: 15
+train_batches: 200
+ep_per_batch: 4
+
+max_epoch: 300
+optimizer: sgd
+optimizer_args: {lr: 0.05, weight_decay: 5.e-4, milestones: [100, 200]}
+
+save_epoch: 5
