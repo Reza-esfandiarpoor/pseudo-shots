@@ -1,5 +1,5 @@
 # Pseudo Shots: Few-Shot Learning with Auxiliary Data
-Code for [Pseudo Shots: Few-Shot Learning with Auxiliary Data](https://arxiv.org/abs/2012.07176).
+Code for [Pseudo Shots: Few-Shot Learning with Auxiliary Data](https://arxiv.org/abs/2012.07176v2).
 
 <img src="BlockDiagram.jpg" width=750>
 
