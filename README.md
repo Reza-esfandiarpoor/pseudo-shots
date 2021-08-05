@@ -1,3 +1,9 @@
+This repository is no longer maintained. You can find the updated version of the paper as well as its code here: [BatsResearch/efsl](https://github.com/BatsResearch/efsl).
+
+---
+---
+
+
 # Pseudo Shots: Few-Shot Learning with Auxiliary Data
 Code for [Pseudo Shots: Few-Shot Learning with Auxiliary Data](https://arxiv.org/abs/2012.07176v2).
 
